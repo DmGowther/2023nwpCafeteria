@@ -29,7 +29,7 @@ try {
     die();
 } catch (\Controllers\PrivateNoLoggedException $ex) {
     $redirTo = urlencode(Context::getContextByKey("request_uri"));
-    Site::redirectTo("index.php?page=sec.login&redirto=" . $redirTo);
+    Site::redirectTo("index.php?page=nwp_access_access&redirto=" . $redirTo);
     die();
 } catch (Exception $ex) {
     Site::logError($ex, 500);
