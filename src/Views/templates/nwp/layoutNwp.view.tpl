@@ -122,7 +122,7 @@
                            href="#" id="dropdownMenuButton2" role="button" data-te-dropdown-toggle-ref
                            aria-expanded="false">
                             <!-- User avatar -->
-                            <img src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg" class="rounded-full"
+                            <img src="https://tecdn.b-cdn.net/img/new/avatars/20.jpg" class="rounded-full"
                                  style="height: 35px; width: 35px" alt="Perfil" loading="lazy"/>
                         </a>
                         <!-- Second dropdown menu -->
@@ -135,11 +135,11 @@
                             </li>
                             <li>
                                 <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                   href="#" data-te-dropdown-item-ref>Registrarse</a>
+                                   href="index.php?page=sec_logout" data-te-dropdown-item-ref>Registrarse</a>
                             </li>
                             <li>
                                 <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                   href="#" data-te-dropdown-item-ref>Salir</a>
+                                   href="index.php?page=sec_logout" data-te-dropdown-item-ref>Salir</a>
                             </li>
                         </ul>
                     </div>

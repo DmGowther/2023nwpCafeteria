@@ -41,6 +41,16 @@ input {
     top: 0;
     left: 0;
 }
+.alert {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 350px;
+    border: solid 1px #DC4C64;
+    color: #DC4C64;
+    font-weight: bold;
+    font-size: small;
+    padding: 5px;
+}
 
 .signin-signup {
     position: absolute;
