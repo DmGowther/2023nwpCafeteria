@@ -11,14 +11,18 @@ class access extends PublicController
 {
     //        variables de almacenamiento de datos
     private $txtEmail = "";
-    private $modeAccess="";
+    private $modeAccess="singin";
     private $txtPswd = "";
     private $txtUserName = "";
     private $errorEmail = "";
     private $errorPswd = "";
     private $errorName = "";
+    private $errorEmailSingin = "";
+    private $errorPswdSingin = "";
+    private $generalErrorSingin = "";
     private $generalError = "";
     private $hasErrors = false;
+    private $hasError = false;
 
     public function run(): void
     {
@@ -26,22 +30,22 @@ class access extends PublicController
 
         if ($this->isPostBack()) {
             $modeAccess = $_GET['modeAccess'];
-            if ($modeAccess === 'signin') {
+            if ($modeAccess === 'singin') {
                 $this->txtEmail = $_POST["txtEmail"];
                 $this->txtPswd = $_POST["txtPswd"];
 
                 if (!Validators::IsValidEmail($this->txtEmail)) {
-                    $this->errorEmail = "¡Correo no tiene el formato adecuado!";
+                    $this->errorEmailSingin = "¡Correo no tiene el formato adecuado!";
                     $this->hasError = true;
                 }
                 if (Validators::IsEmpty($this->txtPswd)) {
-                    $this->errorPswd = "¡Debe ingresar una contraseña!";
+                    $this->errorPswdSingin = "¡Debe ingresar una contraseña!";
                     $this->hasError = true;
                 }
                 if (!$this->hasError) {
                     if ($dbUser = \Dao\Security\Security::getUsuarioByEmail($this->txtEmail)) {
                         if ($dbUser["userest"] != \Dao\Security\Estados::ACTIVO) {
-                            $this->generalError = "¡Credenciales son incorrectas!";
+                            $this->generalErrorSingin = "¡Credenciales son incorrectas!";
                             $this->hasError = true;
                             error_log(
                                 sprintf(
@@ -53,7 +57,7 @@ class access extends PublicController
                             );
                         }
                         if (!\Dao\Security\Security::verifyPassword($this->txtPswd, $dbUser["userpswd"])) {
-                            $this->generalError = "¡Credenciales son incorrectas!";
+                            $this->generalErrorSingin = "¡Credenciales son incorrectas!";
                             $this->hasError = true;
                             error_log(
                                 sprintf(
@@ -75,7 +79,7 @@ class access extends PublicController
                                     \Utilities\Context::getContextByKey("redirto")
                                 );
                             } else {
-                                \Utilities\Site::redirectTo("index.php?page=Electronica_ElectronicaList");
+                                \Utilities\Site::redirectTo("index.php?page=nwp_contact");
                             }
                         }
                     } else {
@@ -85,7 +89,7 @@ class access extends PublicController
                                 $this->txtEmail
                             )
                         );
-                        $this->generalError = "¡Credenciales son incorrectas!";
+                        $this->generalErrorSingin = "¡Credenciales son incorrectas!";
                     }
                 }
             } else if ($modeAccess === 'singup') {
@@ -120,6 +124,7 @@ class access extends PublicController
             }
 
         } //FINAL DE POSTBACK
+        $dataView = get_object_vars($this);
         Site::addLink('public/nwp/css/access.css');
         Site::addEndScript('public/nwp/js/access.js');
         Renderer::render('nwp/access/access', $dataView, 'nwp/access/layout.view.tpl');
