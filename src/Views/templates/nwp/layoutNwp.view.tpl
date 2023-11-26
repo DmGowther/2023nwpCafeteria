@@ -77,7 +77,7 @@
                         <!-- Inicio link -->
                         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                             <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                               href="#" data-te-nav-link-ref>Inicio</a>
+                               href="index.php?page=nwp_home" data-te-nav-link-ref>Inicio</a>
                         </li>
                         <!-- Menu link -->
                         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
@@ -97,7 +97,7 @@
                         <!-- Contacto link -->
                         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                             <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                               href="#" data-te-nav-link-ref>Contacto</a>
+                               href="index.php?page=nwp_contact" data-te-nav-link-ref>Contacto</a>
                         </li>
                     </ul>
                 </div>
