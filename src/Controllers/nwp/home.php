@@ -10,8 +10,10 @@ class home extends PublicController
     public function run(): void
     {
         $dataView =[];
-//        Site::addLink('public/nwp/css/contact.css');
-//        Site::addEndScript('public/nwp/js/contact.js');
+        Site::addLink('public/nwp/css/home.css');
+        Site::addLink('public/nwp/css/testimonial.css');
+        Site::addLink('public/nwp/css/faq.css');
+        Site::addEndScript('public/nwp/js/home.js');
         Renderer::render('nwp/home', $dataView,'nwp/layoutNwp.view.tpl');
     }
 }
