@@ -1,16 +1,19 @@
-<br><br><br>
-<hr class="border-2 border-danger">
-<div class="grid-cols-1 sm:grid md:grid-cols-4">
+
+
+<div class="grid-cols-1 sm:grid md:grid-cols-4 ">
     {{foreach menuPublic}}
-    <!-- Card -->
+        <!-- Card -->
         <div class="mx-3 mt-6 flex flex-col rounded-lg border-2 border-danger bg-slate-50 shadow-xl dark:bg-neutral-700 text-center sm:shrink-0 sm:grow sm:basis-0">
-            <!-- Card image -->
-                <img class="rounded-t-lg" src="/{{BASE_DIR}}/public/nwp/img/menu/espresso.jpg" alt="Imagen de {{image}}" loading="lazy">
+
+            <a href="">
+                <img class="rounded-t-lg min-h-[12rem] max-h-[12rem] min-w-[309.25px]" src="{{image}}" alt="Imagen del producto" />
+            </a>
+
             <!-- Card header -->
             <div class="border-b-2 border-neutral-100 px-6 py-4 dark:border-neutral-500">
                 <h5 class="flex items-center justify-center text-neutral-500 dark:text-neutral-300">
                         <span class="mr-2 text-green-700 font-bold">
-                            L. {{price}}
+                            L. {{price}} .00
                         </span>
                     <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-blue-100 px-[0.65em] pb-[0.25em] pt-[0.35em] text-center align-baseline text-[0.75em] font-bold leading-none text-red-700">
                             {{categoriesName}}
@@ -63,7 +66,10 @@
                             <!--Modal body-->
                             <div class="relative p-4">
                                 <!-- Card image -->
-                                <img class="rounded-t-lg" src="" alt="Imagen de producto" loading="lazy"/>
+                                <a href="#!">
+                                    <img class="rounded-t-lg min-h-[12rem] max-h-[12rem] min-w-[309.25px]" src="{{image}}" alt="Imagen del producto" />
+                                </a>
+
                                 <!-- Card header -->
                                 <div class="border-b-2 border-neutral-100 px-6 py-4 dark:border-neutral-500">
                                     <h5 class="flex items-center justify-center text-neutral-500 dark:text-neutral-300">
@@ -76,12 +82,14 @@
                                     </h5>
                                 </div>
                                 <p>
-                                    <strong> Descripción: </strong>
-                                            {{description}}
-                                            <br /><br />
-                                    <strong> Ingredientes: </strong>
-                                            {{ingredients}}
+                                    <strong>Descripción</strong><br>
+                                    {{description}}
+                                    <br /><br />
+                                    <strong>Ingredientes</strong><br>
+                                    {{ingredients}}
                                 </p>
+                                <br /><br />
+                                <p class="text-info-700 font-bold">¡Ordena el tuyo ya!</p>
                             </div>
 
                             <!--Modal footer-->
@@ -97,8 +105,6 @@
             </div>
 
         </div>
-    <!-- Card -->
+        <!-- Card -->
     {{endfor menuPublic}}
 </div>
-
-

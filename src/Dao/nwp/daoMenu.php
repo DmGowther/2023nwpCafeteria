@@ -5,9 +5,7 @@ use Dao\Table;
 class daoMenu extends Table{
 
     public static function selectAllProducts(){
-        $sqlstr = "
-        SELECT products.idProducts, products.name, products.price, products.image, products.description, products.ingredients,categories.nameCategories AS categoriesName, products.status FROM products INNER JOIN categories ON products.categorieId = categories.idCategories WHERE products.status = 'ACT';
-        ";
+        $sqlstr = "SELECT products.idProducts, products.name, products.price, products.image, products.description, products.ingredients,categories.nameCategories AS categoriesName, products.status FROM products INNER JOIN categories ON products.categorieId = categories.idCategories WHERE products.status = 'ACT'; ";
         return self::obtenerRegistros($sqlstr, []);
     }
 
