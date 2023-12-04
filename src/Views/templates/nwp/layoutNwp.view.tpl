@@ -11,10 +11,8 @@
 
 
     <!-- IMPORTACION DE TAILWIND -->
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
     <script src="https://cdn.tailwindcss.com/3.3.0"></script>
     <script>
         tailwind.config = {
@@ -82,7 +80,7 @@
                         <!-- Menu link -->
                         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                             <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                               href="#" data-te-nav-link-ref>Menú</a>
+                               href="index.php?page=nwp_menuPublic" data-te-nav-link-ref>Menú</a>
                         </li>
                         <!-- Galeria link
                         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
@@ -135,7 +133,7 @@
                             </li>
                             <li>
                                 <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                   href="index.php?page=sec_logout" data-te-dropdown-item-ref>Registrarse</a>
+                                   href="index.php?page=sec_logout" data-te-dropdown-item-ref>Iniciar sesión</a>
                             </li>
                             <li>
                                 <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
@@ -186,11 +184,11 @@
                 </li>
             </ul>
             <ul class="menu_footer">
-                <li><a href="./home.html">Inicio</a></li>
-                <li><a href="./menu.html">Menú</a></li>
-                <li><a href="./galeria.html">Galeria</a></li>
-                <li><a href="./sobrenosotros.html">Sobre Nosotros</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="index.php?page=nwp_home">Inicio</a></li>
+                <li><a href="index.php?page=nwp_menuPublic">Menú</a></li>
+                <!-- <li><a href="./galeria.html">Galeria</a></li> -->
+                <!-- <li><a href="./sobrenosotros.html">Sobre Nosotros</a></li> -->
+                <li><a href="index.php?page=nwp_contact">Contacto</a></li>
             </ul>
             <hr>
             <p>&copy; Cafetería Imperial {{~CURRENT_YEAR}} - Todos los derechos reservados.</p>

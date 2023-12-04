@@ -5,7 +5,7 @@ use Dao\Table;
 class Electronica extends Table{
 
     public static function obtenerProElectronica(){
-        $sqlstr = "SELECT * FROM productoselectronica ;";
+        $sqlstr = "SELECT * FROM productoselectronica;";
         return self::obtenerRegistros($sqlstr, []);
     }
 
