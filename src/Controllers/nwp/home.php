@@ -14,6 +14,7 @@ class home extends PublicController
         Site::addLink('public/nwp/css/testimonial.css');
         Site::addLink('public/nwp/css/faq.css');
         Site::addEndScript('public/nwp/js/home.js');
+        $dataView["canAddCart"] = \Utilities\Security::isLogged();
         Renderer::render('nwp/home', $dataView,'nwp/layoutNwp.view.tpl');
     }
 }

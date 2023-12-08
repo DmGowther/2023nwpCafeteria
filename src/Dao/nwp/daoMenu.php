@@ -5,52 +5,52 @@ use Dao\Table;
 class daoMenu extends Table{
 
     public static function selectAllProducts(){
-        $sqlstr = "SELECT products.idProducts, products.name, products.price, products.image, products.description, products.ingredients,categories.nameCategories AS categoriesName, products.status FROM products INNER JOIN categories ON products.categorieId = categories.idCategories WHERE products.status = 'ACT'; ";
+        $sqlstr = "select * from products;";
         return self::obtenerRegistros($sqlstr, []);
     }
 
     public static function selectProductById($id){
         $params = [
-            "idProducts" => $id
+            "id" => $id
         ];
-        $sqlstr = "SELECT * FROM products WHERE products.status = 'ACT' AND products.idProducts =:id;";
+        $sqlstr = "SELECT * FROM products WHERE products.idProducts =:id;";
         return self::obtenerUnRegistro($sqlstr,$params);
     }
 
-    public static function insertNewProduct($name, $price, $image, $description, $ingredients, $categorieId){
+    public static function insertNewProduct($name, $price, $image, $description, $ingredients, $category){
         $params = [
             "name" => $name,
             "price" => $price,
             "image"=> $image,
             "description"=> $description,
             "ingredients"=> $ingredients,
-            "categorieId"=> $categorieId
+            "category"=> $category
         ];
 
-        $sqlsrt = "insert into cafeimperialdb.products (name, price, image, description, ingredients, categorieId) VALUES(:name, :price, :image, :description, :ingredients, :categorieId);";
+        $sqlsrt = "insert into products (name, price, image, description, ingredients, category) VALUES(:name, :price, :image, :description, :ingredients, :category);";
         return self::executeNonQuery($sqlsrt, $params);
     }
 
-    public static function updateProduct($idProducts, $name, $price, $image, $description, $ingredients, $categorieId, $status){
+    public static function updateProduct($idProducts, $name, $price, $image, $description, $ingredients, $category){
         $params = [
+            "idProducts" => $idProducts,
             "name" => $name,
             "price" => $price,
             "image" => $image,
             "description" => $description,
             "ingredients" => $ingredients,
-            "categorieId" => $categorieId,
-            "status" => $status,
-            "idProducts" => $idProducts
+            "category" => $category
         ];
-        $sqlsrt = "UPDATE cafeimperialdb.products SET name=:name, price=:price, image=:image, description=:description, ingredients=:ingredients, categorieId=:categorieId, status=:status WHERE idProducts=:idProducts;";
+        $sqlsrt = "UPDATE products SET name=  :name, price= :price, image= :image, description= :description, ingredients= :ingredients, category= :category WHERE idProducts= :idProducts";
         return self::executeNonQuery($sqlsrt, $params);
+
     }
 
     public static function deleteProduct($id){
         $params = [
             "idProducts" => $id
         ];
-        $sqlsrt = "DELETE FROM cafeimperialdb.products WHERE idProducts=:id;";
+        $sqlsrt = "DELETE FROM products WHERE idProducts=:id;";
         return self::executeNonQuery($sqlsrt, $params);
     }
 }

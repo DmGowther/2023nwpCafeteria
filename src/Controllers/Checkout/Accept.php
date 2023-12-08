@@ -3,6 +3,9 @@
 namespace Controllers\Checkout;
 
 use Controllers\PublicController;
+use Dao\nwp\daoOrders;
+use Utilities\Security;
+
 class Accept extends PublicController{
     public function run():void
     {
@@ -11,11 +14,12 @@ class Accept extends PublicController{
         $session_token = $_SESSION["orderid"] ?: "";
         if ($token !== "" && $token == $session_token) {
             $result = \Utilities\Paypal\PayPalCapture::captureOrder($session_token);
-            $dataview["orderjson"] = json_encode($result, JSON_PRETTY_PRINT);
+//            $dataview["orderjson"] = json_encode($result, JSON_PRETTY_PRINT);
+
         } else {
             $dataview["orderjson"] = "No Order Available!!!";
         }
-        \Views\Renderer::render("paypal/accept", $dataview);
+        \Views\Renderer::render("paypal/accept", $dataview, 'nwp/layoutPay.view.tpl');
     }
 }
 

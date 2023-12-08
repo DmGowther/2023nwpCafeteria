@@ -79,7 +79,7 @@ class access extends PublicController
                                     \Utilities\Context::getContextByKey("redirto")
                                 );
                             } else {
-                                \Utilities\Site::redirectTo("index.php?page=nwp_contact");
+                                \Utilities\Site::redirectTo("index.php?page=nwp_home");
                             }
                         }
                     } else {

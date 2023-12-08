@@ -1,0 +1,77 @@
+:root{
+    --elsalva50: #faf7f5;
+    --elsalva100: #f4e6dd;
+    --elsalva150: rgba(231, 201, 193, 0.5);
+    --elsalva200: #e7c9c1;
+    --elsalva300: #d9b0a7;
+    --elsalva400: #cc8c84;
+    --elsalva500: #bd7962;
+    --elsalva600: #af664f;
+    --elsalva700: #875244;
+    --elsalva750: rgba(135, 82, 68, 0.18);
+    --elsalva800: #6a443c;
+    --elsalva900: #4e3631;
+    --elsalva950: #321917;
+}
+.titleDash {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: bolder;
+    color: var(--elsalva800);
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.formulario {
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: var(--elsalva150);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formulario label {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    color: var(--elsalva900);
+}
+
+.formulario input, .formulario select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid var(--elsalva400);
+    border-radius: 5px;
+}
+
+.formulario input:focus, .formulario select:focus {
+    border-color: var(--elsalva500);
+    outline: none;
+    box-shadow: 0 0 4px var(--elsalva600);
+}
+
+.formulario button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.formulario button#btnCancel {
+    background-color: #d9534f;
+    margin-left: 10px;
+}
+
+.formulario .error {
+    color: #d9534f;
+    margin-top: 5px;
+}

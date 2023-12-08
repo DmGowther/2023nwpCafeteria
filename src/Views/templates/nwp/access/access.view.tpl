@@ -82,6 +82,10 @@
                         id="sign-up-btn">
                     ¡Regístrate aquí!
                 </button>
+                <p>
+                    ó <br>
+                    <a style="color: white; text-decoration: none" href="index.php?page=nwp_home">Continua sin una cuenta. </a>
+                </p>
             </div>
 
             <img src="https://drive.google.com/uc?export=view&id=1rqRrdokH9qojAf3kn2C6OFiBhTuqDGVO"

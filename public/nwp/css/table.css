@@ -1,0 +1,129 @@
+:root{
+    --elsalva50: #faf7f5;
+    --elsalva100: #f4e6dd;
+    --elsalva200: #e7c9c1;
+    --elsalva300: #d9b0a7;
+    --elsalva400: #cc8c84;
+    --elsalva500: #bd7962;
+    --elsalva600: #af664f;
+    --elsalva700: #875244;
+    --elsalva750: rgba(135, 82, 68, 0.18);
+    --elsalva800: #6a443c;
+    --elsalva900: #4e3631;
+    --elsalva950: #321917;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+
+.titleDash {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: bolder;
+    color: var(--elsalva700);
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.dividerCart {
+    border: none;
+    height: 2px;
+    background-color: var(--elsalva500);
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.dividerCart::before {
+    content: '\2022';
+    font-size: 1.5em;
+    display: inline-block;
+    margin: 0 10px;
+    color: #333;
+    position: relative;
+    top: -0.5em;
+    background-color: #fff;
+    padding: 0 5px;
+}
+
+.btnPagar {
+    float: right;
+
+    width: 200px;
+    background-color: var(--elsalva700);
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: var(--elsalva50);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    margin-right: 40px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btnPagar:hover {
+    background-color: var(--elsalva600);
+}
+
+.btnPagar .transparentBtn {
+    margin: 0;
+    background: none;
+    border: 2px solid var(--elsalva50);
+    width: 160px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+table{
+    margin: 0 auto;
+    margin-bottom: 35px;
+    width: 95%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 2px 15px rgba(64,64,64,.5);
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+td , th{
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+th{
+    background-color: var(--elsalva500);
+    color: #fafafa;
+    font-weight: bolder;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+tr:nth-child(even){
+
+    background-color: var(--elsalva750);
+}
+
+a {
+    text-decoration: none;
+    color: var(--elsalva600);
+}
+
+a:hover {
+    color: var(--elsalva500);
+}

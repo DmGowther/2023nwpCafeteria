@@ -90,6 +90,12 @@ abstract class Table
         return $query->fetch();
     }
 
+    protected static function getLastInsertId()
+    {
+        return self::getConn()->lastInsertId();
+    }
+
+
     protected static function executeNonQuery($sqlstr, $params,  &$conn = null)
     {
         $pConn = null;
@@ -104,6 +110,24 @@ abstract class Table
         }
         return $query->execute();
     }
+
+    protected static function executeNonQueryB($sqlstr, $params, &$conn = null)
+    {
+        $pConn = null;
+        if ($conn != null) {
+            $pConn = $conn;
+        } else {
+            $pConn = self::getConn();
+        }
+        $query = $pConn->prepare($sqlstr);
+        foreach ($params as $key => &$value) {
+            $query->bindParam(":" . $key, $value, self::getBindType($value));
+        }
+        $query->execute();
+        return $query->rowCount(); // Return the number of affected rows
+    }
+
+
 
     protected static function _getStructFrom($structure, $data)
     {

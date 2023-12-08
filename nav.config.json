@@ -23,19 +23,24 @@
   ],
   "private": [
     {
-      "id":"Menu_PaymentCheckout",
-      "nav_url": "index.php?page=Checkout_Checkout",
-      "nav_label": "Carretilla de Compra"
+      "id": "Menu_Productos",
+      "nav_url": "index.php?page=nwp_dashboard_menuListDash",
+      "nav_label":"Productos"
     },
     {
-      "id": "Menu_Categorias",
-      "nav_url": "index.php?page=Productos_Categorias_CategoriasList",
-      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Categorias"
+      "id": "Menu_Home",
+      "nav_url": "index.php?page=nwp_home",
+      "nav_label":"Inicio"
     },
     {
-      "id": "Menu_Electronica",
-      "nav_url": "index.php?page=Electronica_ElectronicaList",
-      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Electronica"
+      "id":"Menu_Products",
+      "nav_url": "index.php?page=nwp_menuPublic",
+      "nav_label": "Menu"
+    },
+    {
+      "id": "Menu_Contacto",
+      "nav_url": "index.php?page=nwp_contact",
+      "nav_label":"Contacto"
     }
   ]
 }

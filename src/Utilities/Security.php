@@ -15,6 +15,7 @@ class Security {
     public static function logout()
     {
         unset($_SESSION["login"]);
+        unset($_SESSION["shopping_cart"]);
     }
     public static function login($userId, $userName, $userEmail)
     {

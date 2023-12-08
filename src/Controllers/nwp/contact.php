@@ -12,6 +12,7 @@ class contact extends PublicController
         $dataView =[];
         Site::addLink('public/nwp/css/contact.css');
         Site::addEndScript('public/nwp/js/contact.js');
+        $dataView["canAddCart"] = \Utilities\Security::isLogged();
         Renderer::render('nwp/contact', $dataView,'nwp/layoutNwp.view.tpl');
     }
 }

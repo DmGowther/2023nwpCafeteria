@@ -1,0 +1,104 @@
+/* Declaración de variables */
+:root{
+    --elsalva50: #faf7f5;
+    --elsalva100: #f4e6dd;
+    --elsalva200: #e7c9c1;
+    --elsalva300: #d9b0a7;
+    --elsalva400: #cc8c84;
+    --elsalva500: #bd7962;
+    --elsalva600: #af664f;
+    --elsalva700: #875244;
+    --elsalva800: #6a443c;
+    --elsalva900: #4e3631;
+    --elsalva950: #321917;
+}
+
+body {
+    background-color: var(--elsalva300); /* Color café clarito */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.contenedorPay {
+    text-align: center;
+}
+
+.imagePay {
+    max-width: 70%; /* La imagen no se verá más grande que su tamaño original */
+    margin-bottom: 20px; /* Espaciado entre la imagen y el botón */
+}
+
+
+body .btn-bg {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body .btn-bg.bg-2 .btn-2 button {
+    color: var(--elsalva100);
+    background: var(--elsalva600);
+    border: none;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+body .btn-bg.bg-2 .btn-2 button:hover {
+    background: transparent;
+    color: var(--elsalva600);
+}
+
+body .btn-bg.bg-2 .btn-2 button:hover:before,
+body .btn-bg.bg-2 .btn-2 button:hover:after {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    width: 100%;
+}
+
+body .btn-bg.bg-2 .btn-2 button:before,
+body .btn-bg.bg-2 .btn-2 button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 0px;
+    height: 3px;
+    background: var(--elsalva600);
+    transition: all 0.4s ease;
+}
+
+body .btn-bg.bg-2 .btn-2 button:after {
+    top: inherit;
+    left: inherit;
+    bottom: 0;
+    right: 0;
+}
+
+.btn {
+    margin: 0 auto 30px auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    color: var(--elsalva100);
+    position: relative;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 1rem 3rem 1rem 3rem;
+    text-transform: uppercase;
+    font-family: "Lato";
+    font-size: 1.5em;
+}
+
+button a {
+    text-decoration: none;
+}

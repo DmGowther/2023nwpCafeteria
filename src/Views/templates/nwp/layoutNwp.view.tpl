@@ -67,12 +67,18 @@
                     </a>
                     <!-- Left navigation links -->
                     <ul class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
-                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                            <!-- Dashboard link -->
-                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
-                               href="#" data-te-nav-link-ref>Dashboard</a>
-                        </li>
+                        {{foreach NAVIGATION}}
+                            <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                                <!-- Dashboard link -->
+                                <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+                                   href="{{nav_url}}" data-te-nav-link-ref>{{nav_label}}</a>
+                            </li>
+                        {{endfor NAVIGATION}}
                         <!-- Inicio link -->
+                        {{if ~canAddCart}}
+
+                        <strong><span>】</span></strong>
+                        {{endif ~canAddCart}}
                         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                             <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                                href="index.php?page=nwp_home" data-te-nav-link-ref>Inicio</a>
@@ -82,29 +88,21 @@
                             <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                                href="index.php?page=nwp_menuPublic" data-te-nav-link-ref>Menú</a>
                         </li>
-                        <!-- Galeria link
-                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                               href="#" data-te-nav-link-ref>Galeria</a>
-                        </li>-->
-                        <!-- Sobre nosotros link
-                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-                               href="#" data-te-nav-link-ref>Nosotros</a>
-                        </li>-->
                         <!-- Contacto link -->
                         <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
                             <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                                href="index.php?page=nwp_contact" data-te-nav-link-ref>Contacto</a>
                         </li>
+
                     </ul>
                 </div>
 
                 <!-- Right elements -->
                 <div class="relative flex items-center">
+                    {{if ~canAddCart}}
                     <!-- Cart Icon -->
                     <a class="mr-4 text-secondary-500 transition duration-200 hover:text-secondary-400 hover:ease-in-out focus:text-secondary-400 disabled:text-black/30 motion-reduce:transition-none"
-                       href="#">
+                       href="index.php?page=nwp_dashboard_shoppingCart">
                             <span class="[&>svg]:w-5">
                                 <svg style="width: 25px; height: 25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                   <path fill-rule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z" clip-rule="evenodd" />
@@ -129,11 +127,7 @@
                             <!-- Second dropdown menu items -->
                             <li>
                                 <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                   href="#" data-te-dropdown-item-ref>Perfil</a>
-                            </li>
-                            <li>
-                                <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                                   href="index.php?page=sec_logout" data-te-dropdown-item-ref>Iniciar sesión</a>
+                                   href="index.php?page=nwp_dashboard_ListTransaction" data-te-dropdown-item-ref>Perfil</a>
                             </li>
                             <li>
                                 <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
@@ -141,6 +135,17 @@
                             </li>
                         </ul>
                     </div>
+                    {{endif ~canAddCart}}
+
+                    {{ifnot ~canAddCart}}
+                    <div class="relative" data-te-dropdown-ref data-te-dropdown-alignment="end">
+                        <li style="list-style: none" class="mb-4 lg:mb-0 lg:pr-2 bg-" data-te-nav-item-ref>
+                            <a class="inline-block rounded-full bg-success px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#14a44d] transition duration-150 ease-in-out hover:bg-success-600 hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:bg-success-600 focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:outline-none focus:ring-0 active:bg-success-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(20,164,77,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)]"
+                               href="index.php?page=sec_logout"  data-te-nav-link-ref>Acceder</a>
+                        </li>
+                    </div>
+                    {{endifnot ~canAddCart}}
+
                 </div>
             </div>
         </nav>
@@ -186,8 +191,6 @@
             <ul class="menu_footer">
                 <li><a href="index.php?page=nwp_home">Inicio</a></li>
                 <li><a href="index.php?page=nwp_menuPublic">Menú</a></li>
-                <!-- <li><a href="./galeria.html">Galeria</a></li> -->
-                <!-- <li><a href="./sobrenosotros.html">Sobre Nosotros</a></li> -->
                 <li><a href="index.php?page=nwp_contact">Contacto</a></li>
             </ul>
             <hr>
